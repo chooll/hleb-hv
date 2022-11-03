@@ -1,0 +1,150 @@
+@import "global-style";
+
+.vacancy-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto   ;
+  position: relative;
+
+  .arrow-rigth {
+    position: absolute;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .arrow-left {
+    position: absolute;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    background-color: $orange;
+    padding: 10px;
+    border-radius: 50%;
+    transform: rotate(180deg);
+    z-index: 100;
+
+  }
+
+}
+
+.grid-vacancy {
+  display: grid;
+  grid-template-columns: 400px auto;
+  gap: 30px;
+}
+
+
+
+.information-block {
+  background-color: $black-ground;
+  font-family: "Inter";
+  padding: 100px 0px 100px 0px;
+}
+
+.vacancy-block {
+  background-color: $black-ground;
+  padding: 100px 0px 100px 0px;
+  font-family: "Inter", sans-serif;
+}
+
+.region-information {
+  background: $black-ground;
+  font-family: "Inter";
+}
+
+.tables-region {
+  color: white;
+  p {
+    padding: 10px;
+  }
+}
+
+.h-custom {
+  padding: 15px 0px 15px 0px;
+  color: $orange;
+  font-size: 30px;
+}
+
+.information-text-block {
+  p {
+    padding: 5px 0px 5px 0px;
+    font-size: 18px;
+  }
+}
+
+
+.c-block {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  gap: 30px;
+  color: white;
+
+  img {
+    box-sizing: border-box;
+    width: 800px;
+    object-fit: cover;
+
+  }
+}
+
+
+@media screen and (max-width: 1300px) {
+  .c-block {
+    max-width: 1000px;
+
+    img {
+      width: 600px;
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 1000px) {
+  .c-block {
+    max-width: 800px;
+
+    img {
+      width: 500px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+
+
+  .c-block {
+    max-width: 600px;
+    gap: 0;
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .c-block {
+    max-width: 360px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+

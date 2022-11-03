@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.content-block {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  background-size: cover;
+  background-image: url("image/hleb-ind.png");
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+
+}
+
+
+.array-rigth {
+  fill: #FFFFFF;
+  height: 25px;
+  width: 24px;
+  margin: 20px;
+  fill: white;
+}
+
+.name-company {
+
+  padding: 50px 25px 50px 25px;
+  border-radius: 15px;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 48px;
+  font-family: "Roboto Slab";
+  background: #242424;
+}
+
+.info-company {
+  display: grid;
+  font-family: "Inter";
+  align-items: center;
+  font-size: 30px;
+
+  p {
+  }
+
+  .nav-bar {
+    color: #E9B260;
+    display: flex;
+    gap: 40px;
+    padding: 10px 0px 10px 0px;
+    a {
+      color: #E9B260;
+      text-decoration: none;
+      font-size: 24px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  .content-block {
+    max-width: 850px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .content-block {
+    max-width: 600px;
+  }
+
+  .info-company {
+    font-size: 25px;
+
+    .nav-bar {
+      color: #E9B260;
+      display: flex;
+      gap: 15px;
+      padding: 10px 0px 10px 0px;
+
+      a {
+        color: #E9B260;
+        text-decoration: none;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content-block {
+    max-width: 320px;
+    display: grid;
+    gap: 20px;
+  }
+
+  .info-company {
+    p {
+      text-align: center;
+    }
+
+    .nav-bar {
+      justify-content: space-between;
+    }
+  }
+
+  .name-company {
+    font-size: 34px;
+    text-align: center;
+  }
+
+  .array-rigth {
+    display: none;
+  }
+
+}
