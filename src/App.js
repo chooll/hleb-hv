@@ -22,8 +22,30 @@ function App() {
         {
             "name": "Пекарь",
             "salary": "от 40 000 руб./мес",
-            "image": "../style/image/f_pecar.png"
-        }
+            "image": "image/f_pecar.png"
+        },
+        {
+            "name": "Механик",
+            "salary": "от 20 000 руб./мес",
+            "image": "image/f_pecar.png"
+        },
+        {
+            "name": "Механик",
+            "salary": "от 20 000 руб./мес",
+            "image": "image/f_pecar.png"
+        },
+        {
+            "name": "Механик",
+            "salary": "от 20 000 руб./мес",
+            "image": "image/f_pecar.png"
+        },
+        {
+            "name": "Механик",
+            "salary": "от 20 000 руб./мес",
+            "image": "image/f_pecar.png"
+        },
+
+
     ]);
 
   return (
