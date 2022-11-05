@@ -5,6 +5,7 @@ import RegionInformation from "./components/RegionInformation";
 import VacancyBlock from "./components/VacancyBlock";
 import {useState} from "react";
 import ExitProduct from "./components/ExitProduct";
+import CommentBlock from "./components/CommentBlock";
 
 function App() {
     const information = [
@@ -54,6 +55,38 @@ function App() {
 
     ]);
 
+    const comments = [
+        {
+            "name": "test 1",
+            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
+        },
+        {
+            "name": "test 1",
+            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
+        },
+        {
+            "name": "test 1",
+            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
+        },
+        {
+            "name": "test 1",
+            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
+        },
+        {
+            "name": "test 1",
+            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
+        },
+        {
+            "name": "test 1",
+            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
+        },
+        {
+            "name": "test 1",
+            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
+        }
+
+    ]
+
   return (
     <div className="App">
         <Header/>
@@ -61,6 +94,7 @@ function App() {
         <RegionInformation/>
         <ExitProduct/>
         <VacancyBlock vacancy={vacancy}/>
+        <CommentBlock comments={comments}/>
     </div>
   );
 }

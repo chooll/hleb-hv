@@ -1,0 +1,76 @@
+@import "global-style";
+
+.comment-block {
+  padding: 100px 0px 100px 0px;
+  background: $black-ground;
+  font-family: "Inter", sans-serif;
+
+  .c-block {
+    display: block;
+  }
+}
+
+.grid-comment {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.button {
+  padding: 15px;
+  background: $orange;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  float: right;
+}
+
+.overflow-comment {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.comment-list {
+  overflow-y: visible;
+}
+
+.custom-single-line-input {
+  padding: 15px;
+  background: $gray;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  outline: none;
+  color: white;
+  width: 100%;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.comment {
+  margin: 15px 0px 15px 0px;
+  padding: 15px;
+  background: $gray;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 9px rgba(0, 0, 0, 0.25);
+  .name-user {
+    color: $orange;
+    margin: 5px 0px 5px 0px;
+  }
+
+  p {
+    margin: 5px 0px 5px 0px;
+  }
+
+  .name-user-block {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.input-block {
+  p {
+    margin: 10px 0px 10px 0px;
+  }
+
+  margin: 10px 0px 40px 0px;
+}
