@@ -4,11 +4,11 @@ const Comment = ({comment}) => {
     return (
         <article className="comment">
             <div className="name-user-block">
-                <h3 className="name-user">{comment.name}</h3>
+                <h3 className="name-user">{comment.nameuser}</h3>
                 <div className="rating-comment">
                 </div>
             </div>
-            <p>{comment.textComment}</p>
+            <p>{comment.commenttext}</p>
         </article>
     );
 };

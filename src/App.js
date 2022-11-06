@@ -3,9 +3,10 @@ import './styles/header.scss'
 import InformationBlock from "./components/InformationBlock";
 import RegionInformation from "./components/RegionInformation";
 import VacancyBlock from "./components/VacancyBlock";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import ExitProduct from "./components/ExitProduct";
 import CommentBlock from "./components/CommentBlock";
+import {getAllComent} from "./http/userAPI";
 
 function App() {
     const information = [
@@ -55,7 +56,7 @@ function App() {
 
     ]);
 
-    const comments = [
+    const [comments, setComment] = useState([
         {
             "name": "test 1",
             "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
@@ -85,7 +86,16 @@ function App() {
             "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
         }
 
-    ]
+    ])
+
+    const loadData = async () => {
+        const result = await getAllComent();
+        setComment(result);
+        console.log(result);
+    }
+
+    useEffect(el => {
+    })
 
   return (
     <div className="App">
@@ -94,7 +104,7 @@ function App() {
         <RegionInformation/>
         <ExitProduct/>
         <VacancyBlock vacancy={vacancy}/>
-        <CommentBlock comments={comments}/>
+        <CommentBlock comments={comments} loadData={loadData}/>
     </div>
   );
 }

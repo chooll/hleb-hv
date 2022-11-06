@@ -5,9 +5,12 @@ import Comment from "./Comment";
 import InputMask from "./InputMask";
 import InputValid from "./InputValid";
 
-const CommentBlock = ({comments}) => {
+const CommentBlock = ({comments, loadData}) => {
     return (
-        <div className="comment-block">
+        <div
+            className="comment-block"
+            onClick={() => loadData()}
+        >
             <div className="c-block">
 
                 <article className="grid-comment">
@@ -16,9 +19,9 @@ const CommentBlock = ({comments}) => {
                         <h1 className="h-custom">Отзывы о нас</h1>
                         <div className="overflow-comment">
                             {
-                                comments.map ((el, index) => {
+                                comments != undefined ? comments.map ((el, index) => {
                                     return <Comment comment={el} key={index}/>
-                                })
+                                }) : 0
                             }
                         </div>
                     </div>
