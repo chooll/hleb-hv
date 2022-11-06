@@ -6,7 +6,7 @@ import VacancyBlock from "./components/VacancyBlock";
 import {useEffect, useState} from "react";
 import ExitProduct from "./components/ExitProduct";
 import CommentBlock from "./components/CommentBlock";
-import {getAllComent} from "./http/userAPI";
+import {getAllComent, getAllVacancy} from "./http/userAPI";
 
 function App() {
     const information = [
@@ -67,7 +67,10 @@ function App() {
 
     const loadData = async () => {
         const result = await getAllComent();
+        const r1 = await getAllVacancy();
         setComment(result);
+        setVacancy(r1);
+        console.log(r1);
     }
 
   return (

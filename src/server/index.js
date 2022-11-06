@@ -11,9 +11,13 @@ app.use(express.json())
 
 app.get ('/test', async (req, res) => {
     const request = await db.query('SELECT * FROM Coment');
-    res.json (request.rows)
+    res.json (request.rows);
 })
 
+app.get ('/vacancy', async (req, res) => {
+    const request = await db.query('SELECT * FROM VACANCY');
+    res.json (request.rows);
+})
 
 app.listen(
     PORT,

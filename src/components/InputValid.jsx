@@ -8,7 +8,7 @@ const InputValid = ({placeholder}) => {
             className={"custom-single-line-input"}
             type="text"
             onChange={event => setValue(event.target.value)}
-            maxLength="30"
+            maxLength="50"
             placeholder={placeholder}
         />
     );
