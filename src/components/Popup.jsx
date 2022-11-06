@@ -62,7 +62,8 @@ const Popup = ({active, setActive, vacancy}) => {
                             <input
                                 type="date"
                                 className="custom-single-line-input"
-                                max={"2004-31-12"}
+                                max="2004-12-31"
+                                min="1950-12-31"
                             />
                         </div>
 
