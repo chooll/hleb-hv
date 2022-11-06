@@ -30,7 +30,12 @@ function App() {
         {
             "name": "Пекарь",
             "salary": "от 40 000 руб./мес",
-            "image": "image/f_pecar.png"
+            "image": "image/f_pecar.png",
+            "descirpt": "Необходим пекарь, обучение проходит 2 месяца, с заработной платой в 14 тыс. рублей после" +
+                " обучения до 40 тыс. рублей",
+            "age": "от 20 до 60",
+            "expirience": "Не требуется",
+            "work": "Плавающий график + ночные смены"
         },
         {
             "name": "Механик",
@@ -57,48 +62,16 @@ function App() {
     ]);
 
     const [comments, setComment] = useState([
-        {
-            "name": "test 1",
-            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
-        },
-        {
-            "name": "test 1",
-            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
-        },
-        {
-            "name": "test 1",
-            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
-        },
-        {
-            "name": "test 1",
-            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
-        },
-        {
-            "name": "test 1",
-            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
-        },
-        {
-            "name": "test 1",
-            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
-        },
-        {
-            "name": "test 1",
-            "textComment": "FJkdj wer sdjkfwe sdf fwit sdfwe ojsdf wekr"
-        }
 
     ])
 
     const loadData = async () => {
         const result = await getAllComent();
         setComment(result);
-        console.log(result);
     }
 
-    useEffect(el => {
-    })
-
   return (
-    <div className="App">
+    <div className="App" onLoad={loadData}>
         <Header/>
         <InformationBlock information={information[0]}/>
         <RegionInformation/>

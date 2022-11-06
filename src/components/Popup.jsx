@@ -22,24 +22,24 @@ const Popup = ({active, setActive, vacancy}) => {
                         </div>
 
                         <div className="description">
-                            Необходим пекарь, обучение проходит 2 месяца, с заработной платой в 14 тыс. рублей после обучения до 40 тыс. рублей
+                            {vacancy.descirpt}
                         </div>
 
                         <div className="demand">
                             <h3>Требования</h3>
                             <div className="demand-item">
                                 <p className="name-demand">Возраст</p>
-                                <p className="value-demand">от 20 до 60</p>
+                                <p className="value-demand">{vacancy.age}</p>
                             </div>
 
                             <div className="demand-item">
                                 <p className="name-demand">Опыт</p>
-                                <p className="value-demand">не требуется</p>
+                                <p className="value-demand">{vacancy.expirience}</p>
                             </div>
 
                             <div className="demand-item">
-                                <p className="name-demand">Возраст</p>
-                                <p className="value-demand">от 20 до 60</p>
+                                <p className="name-demand">Режим работы</p>
+                                <p className="value-demand">{vacancy.work}</p>
                             </div>
                         </div>
                     </article>

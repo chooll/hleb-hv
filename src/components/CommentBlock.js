@@ -9,7 +9,7 @@ const CommentBlock = ({comments, loadData}) => {
     return (
         <div
             className="comment-block"
-            onClick={() => loadData()}
+            onLoad={loadData}
         >
             <div className="c-block">
 
