@@ -4,7 +4,6 @@ import "../styles/comment-block.scss";
 import Comment from "./Comment";
 import InputMask from "./InputMask";
 import InputValid from "./InputValid";
-import TextBox from "./TextBox";
 
 const CommentBlock = ({comments}) => {
     return (

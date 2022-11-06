@@ -3,6 +3,7 @@ import "../styles/infoblock.scss";
 import "../styles/global-style.scss";
 import Vacancy from './Vacancy';
 import rigthRigth from "./right-arrow-svgrepo-com.svg";
+import Popup from "./Popup";
 
 const VacancyBlock = ({vacancy}) => {
 
@@ -11,6 +12,9 @@ const VacancyBlock = ({vacancy}) => {
 
     const [leftArrow, setLeftArrow] = useState(false);
     const [rigthArrow, setRigthArrow] = useState(vacancy.length > 3);
+
+    const [totalVacancy, setTotalVacancy] = useState();
+    const [activeModal, setActiveModal] = useState(false);
 
     const getPageVacancy = () => {
         return vacancy.filter (
@@ -30,12 +34,12 @@ const VacancyBlock = ({vacancy}) => {
         setStep(step - 1);
         setLeftArrow(step === 1 ? false : true);
         setRigthArrow(step === Math.floor(vacancy.length / (3 - 1))? false : true)
-        // console.log(Math.floor(vacancy.length / 3 - 1), " -> ", vacancy.length / 3 - 1)
-
     }
 
     return (
         <section id={"vacancy"} className={"vacancy-block"}>
+            <Popup active={activeModal} setActive={setActiveModal} vacancy={totalVacancy}/>
+
             <div className="c-block">
                 <article className="grid-vacancy">
                     <div className="text-vacancy">
@@ -51,7 +55,12 @@ const VacancyBlock = ({vacancy}) => {
 
                         {
                             getPageVacancy().map ((el, index) => {
-                                return <Vacancy vacancy={el} key={index}/>
+                                return <Vacancy
+                                    vacancy={el}
+                                    key={index}
+                                    setVacancyReturn={setTotalVacancy}
+                                    setActiveModal={setActiveModal}
+                                />
                             })
                         }
 

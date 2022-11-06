@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 
 const InputValid = ({placeholder}) => {
-    const [value, setValue] = useState();
-
+    const [value, setValue] = useState("");
 
     return (
         <input
@@ -10,7 +9,7 @@ const InputValid = ({placeholder}) => {
             type="text"
             onChange={event => setValue(event.target.value)}
             maxLength="30"
-            placeholder={placeholder}ъ
+            placeholder={placeholder}
         />
     );
 };
