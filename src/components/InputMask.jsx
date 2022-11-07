@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
-const InputMask = ({setInpValue}) => {
-    const [inpValue, setInputValue] = useState();
+const InputMask = ({inpValue, setInputValue}) => {
     const maskNumberInput = (value) => {
        return value.replace(/\D/g, "");
     }

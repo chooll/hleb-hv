@@ -57,20 +57,13 @@ function App() {
             "salary": "от 20 000 руб./мес",
             "image": "image/f_pecar.png"
         },
-
-
     ]);
 
-    const [comments, setComment] = useState([
-
-    ])
+    const [comments, setComments] = useState()
 
     const loadData = async () => {
-        const result = await getAllComent();
         const r1 = await getAllVacancy();
-        setComment(result);
         setVacancy(r1);
-        console.log(r1);
     }
 
   return (
@@ -80,7 +73,7 @@ function App() {
         <RegionInformation/>
         <ExitProduct/>
         <VacancyBlock vacancy={vacancy}/>
-        <CommentBlock comments={comments} loadData={loadData}/>
+        <CommentBlock comments={comments} setComments={setComments} loadData={loadData}/>
     </div>
   );
 }

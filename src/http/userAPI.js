@@ -10,3 +10,10 @@ export const getAllVacancy = async () => {
     return responce.data;
 }
 
+export const sendComment = async (name, comment) => {
+    const responce = await $host.post('/sendcoment', {
+        name: name,
+        comment: comment
+    })
+    return true;
+}

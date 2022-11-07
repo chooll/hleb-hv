@@ -1,11 +1,49 @@
-import React from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import "../styles/global-style.scss";
 import "../styles/comment-block.scss";
 import Comment from "./Comment";
 import InputMask from "./InputMask";
 import InputValid from "./InputValid";
+import {getAllComent, sendComment} from "../http/userAPI";
+import {isNotCensureText} from "../Classes/Censure";
 
-const CommentBlock = ({comments, loadData}) => {
+const CommentBlock = ({comments, setComments, loadData}) => {
+
+    const [nameUser, setNameUser] = useState("");
+    const [phoneUser, setPhoneUser] = useState("");
+    const [comment, setComment] = useState("")
+    const [send, setSend] = useState(0);
+
+    useEffect(  () =>  {
+        setTimeout(() => {
+            getAllComent()
+                .then (el => el)
+                .then (json => setComments(json))
+                .catch(
+                    error => console.log(error)
+                )
+        }, 1000);
+    }, [comments]);
+
+
+    const sendCommentary = async () => {
+        if (nameUser != "" && phoneUser != "" && comment != "" && phoneUser.length > 14) {
+            setSend(Math.random())
+            if (!isNotCensureText(nameUser) && !isNotCensureText(comment)) {
+                sendComment(nameUser, comment)
+                setNameUser("");
+                setPhoneUser("");
+                setComment("");
+                setSend(true);
+            } else {
+                alert ('Не используйте оскорбления')
+            }
+
+        } else {
+            alert('Заполните все поля верно')
+        }
+    }
+
     return (
         <div
             className="comment-block"
@@ -19,9 +57,9 @@ const CommentBlock = ({comments, loadData}) => {
                         <h1 className="h-custom">Отзывы о нас</h1>
                         <div className="overflow-comment">
                             {
-                                comments != undefined ? comments.map ((el, index) => {
+                                comments !== undefined ? comments.map ((el, index) => {
                                     return <Comment comment={el} key={index}/>
-                                }) : 0
+                                }) : <p>Загрузка подождите</p>
                             }
                         </div>
                     </div>
@@ -31,20 +69,23 @@ const CommentBlock = ({comments, loadData}) => {
                         
                         <article className="input-block">
                             <p>Введите номер телефона</p>
-                            <InputMask/>
+                            <InputMask inpValue={phoneUser} setInputValue={setPhoneUser}/>
                         </article>
 
                         <article className="input-block">
                             <p>Введите имя</p>
-                            <InputValid placeholder={"Введите имя"}/>
+                            <InputValid value={nameUser} setValue={setNameUser} placeholder={"Введите имя"}/>
                         </article>
 
                         <article className="input-block">
                             <p>Отзыв</p>
-                            <InputValid placeholder={"Введите отзыв"}/>
+                            <InputValid value={comment} setValue={setComment} placeholder={"Введите отзыв"}/>
                         </article>
 
-                        <button className="button">Отправить</button>
+                        <button
+                            className="button"
+                            onClick={() => sendCommentary()}
+                        >Отправить</button>
                     </div>
                 </article>
 
