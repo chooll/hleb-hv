@@ -28,7 +28,6 @@ const CommentBlock = ({comments, setComments, loadData}) => {
 
     const sendCommentary = async () => {
         if (nameUser != "" && phoneUser != "" && comment != "" && phoneUser.length > 14) {
-            setSend(Math.random())
             if (!isNotCensureText(nameUser) && !isNotCensureText(comment)) {
                 sendComment(nameUser, comment)
                 setNameUser("");

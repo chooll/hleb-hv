@@ -17,3 +17,14 @@ export const sendComment = async (name, comment) => {
     })
     return true;
 }
+
+export const sendVacancy = async (fam, name, otch, date, phone, name_vacancy) => {
+    const responce = await $host.post('/sendvacancy', {
+        fam: fam,
+        name: name,
+        otch: otch,
+        date: date,
+        phone: phone,
+        name_vacancy: name_vacancy
+    })
+}

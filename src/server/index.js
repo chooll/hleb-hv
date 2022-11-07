@@ -23,6 +23,13 @@ app.get ('/vacancy', async (req, res) => {
 app.post ('/sendcoment', async (req, res) => {
     const {name, comment} = req.body;
     const request = await db.query(`call  createcommnet ('${name}', '${comment}')`)
+})
+
+app.post ('/sendvacancy', async (req, res) => {
+    const {fam, name, otch, date, phone, name_vacancy} = req.body;
+    const request = await db.query(
+        `call add_answer ('${fam}', '${name}', '${otch}', '${date}', ${phone}, '${name_vacancy}')`
+    );
     res.json(req.body);
 })
 
