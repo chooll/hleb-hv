@@ -83,3 +83,23 @@
   }
 
 }
+
+@media screen and (max-width: 1250px) {
+  .button {
+    float: none;
+    justify-content: flex-end;
+  }
+  .grid-modal {
+    display: block;
+    img {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .modal {
+    position: relative;
+  }
+
+}

@@ -97,11 +97,20 @@ const Popup = ({active, setActive, vacancy}) => {
                             />
                         </div>
 
-                        <button
-                            className="button"
-                            onClick={() => sendVacancyEnter()}
+                        <div className="button-flex" style={{"display": "flex", "gap": "20px"}}>
+                            <button
+                                className="button"
+                                onClick={() => sendVacancyEnter()}
 
-                        >Отправить</button>
+                            >Отправить</button>
+
+                            <button
+                                className="button close"
+                                onClick={() => setActive(false)}
+                            >Закрыть</button>
+                        </div>
+
+
                     </article>
                 </section>
 

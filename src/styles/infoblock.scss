@@ -86,7 +86,6 @@
   max-width: 1500px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
   padding: 30px;
   gap: 30px;
   color: white;
@@ -95,7 +94,7 @@
     box-sizing: border-box;
     width: 800px;
     object-fit: cover;
-
+    border-radius: 5px;
   }
 }
 
@@ -109,6 +108,15 @@
     }
   }
 
+  .grid-vacancy {
+    display: block;
+
+  }
+
+  .vacancy-list {
+    margin: 10px auto;
+  }
+
 }
 
 
@@ -120,6 +128,8 @@
       width: 500px;
     }
   }
+
+
 }
 
 

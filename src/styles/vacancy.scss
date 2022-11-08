@@ -31,3 +31,37 @@
         width: 90%;
     }
 }
+
+@media screen and (max-width: 1145px) {
+
+    .vacancy {
+        width: 100%;
+
+        .img-vacancy {
+            object-fit: fill;
+            height: 300px;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .vacancy {
+        border-left: 0px solid transparent;
+        border-right: 0px solid transparent;
+    }
+
+    .vacancy .img-vacancy {
+        object-fit: cover;
+        transform: skew(-10deg);
+        /*! display: none; */
+    }
+
+    .info-block-vacancy {
+        background: none;
+
+        .name-vacancy {
+            font-size: 16px;
+        }
+    }
+}
